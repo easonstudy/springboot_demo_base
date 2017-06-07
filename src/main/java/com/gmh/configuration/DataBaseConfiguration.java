@@ -1,6 +1,7 @@
 package com.gmh.configuration;
 
 import com.alibaba.druid.pool.DruidDataSource;
+import org.apache.log4j.Logger;
 import org.springframework.boot.bind.RelaxedPropertyResolver;
 import org.springframework.context.EnvironmentAware;
 import org.springframework.context.annotation.Bean;
@@ -17,7 +18,7 @@ import javax.sql.DataSource;
 @Configuration
 @EnableTransactionManagement
 public class DataBaseConfiguration implements EnvironmentAware {
-
+    private Logger logger = Logger.getLogger(DataBaseConfiguration.class);
     private RelaxedPropertyResolver propertyResolver;
 
     @Override
@@ -27,7 +28,8 @@ public class DataBaseConfiguration implements EnvironmentAware {
 
     @Bean(destroyMethod = "close", initMethod = "init")
     public DataSource writeDataSource() {
-        System.out.println("注入druid！！！");
+        //System.out.println("注入druid！！！");
+        logger.info("注入druid！！！");
 
         DruidDataSource datasource = new DruidDataSource();
         datasource.setDriverClassName(propertyResolver.getProperty("driver-class-name"));
@@ -39,6 +41,7 @@ public class DataBaseConfiguration implements EnvironmentAware {
         datasource.setMaxWait(Long.valueOf(propertyResolver.getProperty("maxWait")));
         datasource.setMaxActive(Integer.valueOf(propertyResolver.getProperty("maxActive")));
         datasource.setMinEvictableIdleTimeMillis(Long.valueOf(propertyResolver.getProperty("minEvictableIdleTimeMillis")));
+        datasource.setTimeBetweenEvictionRunsMillis(Long.valueOf(propertyResolver.getProperty("timeBetweenEvictionRunsMillis")));
         return datasource;
     }
 }

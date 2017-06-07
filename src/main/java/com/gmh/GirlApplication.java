@@ -5,8 +5,11 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 
+//扫描servlet 文件
 @ServletComponentScan
+//Mybaits dao扫描
 @MapperScan("com.gmh.dao")
+//启动
 @SpringBootApplication
 public class GirlApplication {
 
