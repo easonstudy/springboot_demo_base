@@ -22,9 +22,18 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
+		<spring-boot-starter-redis-version>1.4.1.RELEASE</spring-boot-starter-redis-version>
 	</properties>
 
 	<dependencies>
+		<!-- Spring Boot Redis 依赖 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-redis</artifactId>
+			<version>${spring-boot-starter-redis-version}</version>
+		</dependency>
+
+		<!-- Spring Boot Web 依赖 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>

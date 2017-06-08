@@ -1,6 +1,17 @@
 spring:
   profiles:
     active: dev
+  redis:
+    database: 0
+    host: 120.77.182.208
+    port: 6379
+    password: bb123456
+    pool:
+      max-active: 8
+      max-wait: -1
+      max-idle: 8
+      min-idle: 0
+    timeout: 0
 
 druid:
   driver-class-name: oracle.jdbc.OracleDriver
