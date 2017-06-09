@@ -13,6 +13,7 @@ spring:
       min-idle: 0
     timeout: 0
 
+
 druid:
   driver-class-name: oracle.jdbc.OracleDriver
   url: jdbc:oracle:thin:@114.112.254.10:1521:hkdb06

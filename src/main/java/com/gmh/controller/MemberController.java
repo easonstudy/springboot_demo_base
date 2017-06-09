@@ -19,6 +19,8 @@ public class MemberController {
 
     @GetMapping("/get/{id}")
     public String getMember(@PathVariable("id") Integer id){
+        Integer a = 5;
+        System.out.println();
         Member m = memberService.searchMember(id);
         Gson gson = new Gson();
         return gson.toJson(m);

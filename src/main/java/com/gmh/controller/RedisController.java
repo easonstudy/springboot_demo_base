@@ -36,7 +36,7 @@ public class RedisController {
     }
 
     @GetMapping("/delete/{key}")
-    public String merge(@PathVariable("key") String key){
+    public String delete(@PathVariable("key") String key){
         try{
             ValueOperations<String, String> ops = redisTemplate.opsForValue();
 
@@ -52,6 +52,14 @@ public class RedisController {
         return "Not Delete";
     }
 
-
+    @GetMapping("/get/{key}")
+    public String get(@PathVariable("key") String key){
+        try{
+            ValueOperations<String, String> ops = redisTemplate.opsForValue();
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+        return "Not Delete";
+    }
 
 }
