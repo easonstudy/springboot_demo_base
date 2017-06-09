@@ -15,7 +15,8 @@ public class HelloController {
     private GirlProperties girlProperties;*/
 
     @RequestMapping(value = {"/hello/{id}", "/hi/{id}"}, method = RequestMethod.GET)
-    public String test(@PathVariable("id") Integer id){
+    public String test(@PathVariable("id") Integer id) {
+        System.out.println("aabb");
         return "CupSize_1:" + "id:" + id;
     }
 
